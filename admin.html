@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة الإدارة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- login section -->
+  <div id="login-section">
+    <div class="admin-box">
+      <h1 class="admin-title">لوحة الإدارة</h1>
+      <input type="text"     id="admin-user" placeholder="اسم المستخدم" />
+      <input type="password" id="admin-pass" placeholder="كلمة المرور" />
+      <button id="login-btn">دخول</button>
+      <p id="login-msg"></p>
+    </div>
+  </div>
+
+  <!-- dashboard section — hidden until login -->
+  <div id="dashboard-section" style="display:none">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="Yamtree.html">شجرة يام</a>
+      <button id="logout-btn">خروج</button>
+    </nav>
+
+    <h1 class="admin-title" style="text-align:center; margin:40px 0;">الاقتراحات المعلقة</h1>
+
+    <div id="suggestions-container"></div>
+    <p id="no-suggestions" style="display:none; text-align:center; color:#8a7a6a; font-family:'Aref Ruqaa',serif;">
+      لا توجد اقتراحات معلقة
+    </p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clan Tree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="tree-page">
+    <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="heros.html">شيوخ من قبائل يام</a>
+            <a href="Yamtree.html">شجرة يام</a>
+        </nav>
+
+  <header>
+    <p id="msm">شجرة قبائل يام</p>
+    <div class="search-bar">
+     <input type="text" id="search-input" placeholder="ابحث عن اسم..." />
+       <button id="search-btn">بحث</button>
+</div>
+    <div>
+      <div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+      
+      </div>
+    </div>
+  </header>
+
+
+  <div class="suggest-section">
+  <h2 class="suggest-title" id="suggest-toggle">اقتراح إضافة فرع <span class="suggest-arrow">▲</span></h2>
+  <div class="suggest-form-body">
+    <form id="suggest-form">
+      <input type="text" id="suggest-name" placeholder="اسم الشخص أو الفرع" required />
+      <select id="suggest-parent">
+        <option value="">اختر الفرع الأب...</option>
+      </select>
+      <input type="text" id="suggest-by" placeholder="اسمك" required />
+      <textarea id="suggest-notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+      <button type="submit">إرسال الاقتراح</button>
+    </form>
+    <p id="suggest-msg"></p>
+  </div>
+</div>
+
+  <div id="tree-container"></div>
+  <div id="name-bg"></div>
+
+  <div class="zoom-controls">
+    <button id="zoom-in">+</button>
+    <button id="zoom-out">−</button>
+    <button id="zoom-reset">↺</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="tree.js"></script>
+
+</body>
+</html>
