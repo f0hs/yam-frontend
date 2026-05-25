@@ -468,7 +468,11 @@ function buildTree(nodes) {
 }
 
 /* ── fetch tree from backend ── */
-fetch('https://yam-backend-production-eb46.up.railway.app/api/tree')
+const API_BASE = (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:3000'
+  : 'https://yam-backend-production-eb46.up.railway.app';
+
+fetch(`${API_BASE}/api/tree`)
   .then(r => r.json())
   .then(nodes => {
     const treeData = buildTree(nodes);
@@ -490,7 +494,7 @@ fetch('https://yam-backend-production-eb46.up.railway.app/api/tree')
 
 
   /* ── populate parent dropdown ── */
-fetch('https://yam-backend-production-eb46.up.railway.app/api/tree')
+fetch(`${API_BASE}/api/tree`)
   .then(r => r.json())
   .then(nodes => {
     const select = document.getElementById('suggest-parent');
@@ -522,7 +526,7 @@ document.getElementById('suggest-form').addEventListener('submit', async (e) => 
   }
 
   try {
-    const res = await fetch('https://yam-backend-production-eb46.up.railway.app/api/suggest', {
+    const res = await fetch(`${API_BASE}/api/suggest`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, parentId, submittedBy, notes })
