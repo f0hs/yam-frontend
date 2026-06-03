@@ -470,7 +470,7 @@ function buildTree(nodes) {
 /* ── fetch tree from backend ── */
 const API_BASE = (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? 'http://localhost:3000'
-  : 'https://yam-backend-production-eb46.up.railway.app';
+  : 'https://yam-backend-rqly.onrender.com';
 
 fetch(`${API_BASE}/api/tree`)
   .then(r => r.json())
