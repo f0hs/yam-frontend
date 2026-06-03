@@ -1,4 +1,4 @@
-const API = 'https://yam-backend-production-eb46.up.railway.app';
+const API = 'https://yam-backend-rqly.onrender.com';
 
 /* ── check if already logged in ── */
 fetch(`${API}/api/admin/check`, { credentials: 'include' })
