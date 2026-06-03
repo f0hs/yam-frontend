@@ -192,7 +192,7 @@ body.tree-page {
 
 /* Suggest section */
 .suggest-section {
-  max-width: 500px;
+  max-width: 300px;
   position: fixed;
   bottom: 40px;
   left: 40px;
@@ -210,7 +210,7 @@ body.tree-page {
   font-family: 'Aref Ruqaa', serif;
   color: #c9a84c;
   font-size: 1.6rem;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   text-align: center;
 }
 
@@ -218,7 +218,26 @@ body.tree-page {
   font-size: 0.8rem;
   margin-right: 6px;
   transition: transform 0.3s ease;
-  display: none;
+  display: inline;
+}
+
+.suggest-title {
+  cursor: pointer;
+  user-select: none;
+}
+
+.suggest-form-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.suggest-section.is-open .suggest-form-body {
+  max-height: 600px;
+}
+
+.suggest-section.is-open .suggest-arrow {
+  transform: rotate(180deg);
 }
 
 .suggest-section input,
